@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Menu — Valley Feast Kitchen Delight</title>
+<meta name="description" content="Breakfast, lunch, soups, sides and small bites from Valley Feast in Maracas, St. Joseph. Sada roti, buss up shut, pelau, curry crab and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+</head>
+<body class="menu-page">
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html" aria-label="Valley Feast home">
+      <svg class="brand__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="2"/>
+        <circle cx="50" cy="50" r="42.5" stroke="currentColor" stroke-width="2"/>
+        <path d="M9.5 60.5 L23 45 L32.5 33 L38 39.5 L52.5 19.5 L63 38 L69 32 L90.5 55" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M45 33 l3.5 3.5 l3.5 -3.5 l3.5 3.5 l3.5 -3.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M29 38.5 l2.6 2.6 l2.6 -2.6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M8.5 62.5 C 26 58, 46 63, 62 74 M91.5 62.5 C 74 58, 54 63, 38 74" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+        <g transform="translate(48 66) rotate(-42)">
+          <ellipse cx="0" cy="-17" rx="7.8" ry="10.6" stroke="currentColor" stroke-width="2.6"/>
+          <path d="M0 -6.4 V 26.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(52.5 66) rotate(42)">
+          <path d="M0 -5 L-7.4 -14.5 M0 -5 L7.4 -14.5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+          <path d="M-7.4 -14.5 L-9.4 -25 M-2.5 -16 L-3.1 -27.5 M2.5 -16 L3.1 -27.5 M7.4 -14.5 L9.4 -25" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          <path d="M0 -5 V 26.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <span class="brand__text">
+        <span class="brand__name">Valley Feast</span>
+        <span class="brand__sub">Kitchen &amp; Catering</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="catering.html">Catering</a>
+      <a class="btn btn--spice" href="catering.html#quote">Plan an Event</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero__media">
+      <img src="assets/img/sada-choka.jpg" alt="Sada roti with fire-roasted tomato choka" fetchpriority="high">
+    </div>
+    <div class="wrap page-hero__content">
+      <p class="eyebrow">The kitchen ledger</p>
+      <h1>Cooked this morning,<br>gone by afternoon.</h1>
+      <p>Pots change with the market and the season. Anything marked <strong>priced daily</strong> — call the kitchen and we’ll tell you what the pot says today.</p>
+    </div>
+  </section>
+
+  <div class="menu-toolbar">
+    <div class="wrap menu-toolbar__inner">
+      <nav class="menu-cats" id="menuCats" aria-label="Menu categories"></nav>
+      <div class="menu-filters" role="group" aria-label="Dietary filters">
+        <button type="button" data-filter="veg">Veg</button>
+        <button type="button" data-filter="seafood">Seafood</button>
+        <button type="button" data-filter="spicy">Pepper</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="menuRoot"></div>
+
+  <div class="wrap">
+    <aside class="menu-note reveal">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex:none; margin-top:2px" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v5M12 16v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>All prices in TTD. Pots are cooked fresh each morning in limited batches — call <strong data-vf="phone">(868) 731-1531</strong> before 9 AM to put aside your lunch. Catering menus are fully customisable.</span>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <svg class="brand__mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="2"/>
+        <circle cx="50" cy="50" r="42.5" stroke="currentColor" stroke-width="2"/>
+        <path d="M9.5 60.5 L23 45 L32.5 33 L38 39.5 L52.5 19.5 L63 38 L69 32 L90.5 55" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M45 33 l3.5 3.5 l3.5 -3.5 l3.5 3.5 l3.5 -3.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M29 38.5 l2.6 2.6 l2.6 -2.6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M8.5 62.5 C 26 58, 46 63, 62 74 M91.5 62.5 C 74 58, 54 63, 38 74" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+        <g transform="translate(48 66) rotate(-42)">
+          <ellipse cx="0" cy="-17" rx="7.8" ry="10.6" stroke="currentColor" stroke-width="2.6"/>
+          <path d="M0 -6.4 V 26.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(52.5 66) rotate(42)">
+          <path d="M0 -5 L-7.4 -14.5 M0 -5 L7.4 -14.5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+          <path d="M-7.4 -14.5 L-9.4 -25 M-2.5 -16 L-3.1 -27.5 M2.5 -16 L3.1 -27.5 M7.4 -14.5 L9.4 -25" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          <path d="M0 -5 V 26.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <p class="site-footer__wordmark">Valley Feast Kitchen Delight</p>
+      <p data-vf="blurb">Kitchen delight &amp; catering services from the heart of Maracas Valley.</p>
+    </div>
+    <nav class="site-footer__nav1" aria-label="Site">
+      <strong>Kitchen</strong>
+      <a href="menu.html">Our menu</a>
+      <a href="catering.html">Catering</a>
+      <a href="index.html#visit">Location &amp; hours</a>
+    </nav>
+    <nav class="site-footer__nav2" aria-label="More">
+      <strong>The family</strong>
+      <a data-vf-href="facebook" href="#" target="_blank" rel="noopener">Facebook</a>
+      <a data-vf-href="instagram" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="admin/index.html">Staff studio</a>
+    </nav>
+  </div>
+  <div class="wrap site-footer__legal">
+    <span>© <span id="year"></span> Valley Feast Kitchen Delight. All rights reserved.</span>
+    <span>Authentic Maracas, St. Joseph flavours.</span>
+  </div>
+</footer>
+
+<script src="data/menu-data.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
