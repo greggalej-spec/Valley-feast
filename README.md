@@ -18,7 +18,9 @@ Website + staff studio for Valley Feast — authentic Trinidadian kitchen & cate
 
 Recipe content lives in `data/recipes-data.js`. Add a new object there to publish another recipe; the collection, filters, detail view, ingredient scaling and search-engine recipe data are rendered automatically.
 
-Three print-ready 900 × 900 PNG QR codes are in `assets/img/`:
+**Branded lockups** (bottle label, round sticker, menu badge, A6 counter card and styled codes, as outlined SVG, 600 dpi PNG and trim-size PDF) are in [`brand/qr-kit/`](brand/qr-kit/README.md), with a proof sheet at `brand/qr-kit/index.html` and a builder that scan-tests every file.
+
+The original plain codes, three print-ready 900 × 900 PNGs, are in `assets/img/`:
 
 | File | Destination | Best use |
 |---|---|---|

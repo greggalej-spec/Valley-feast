@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valley Feast QR Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Young+Serif&display=swap">
+<style>
+  /* Layout: a printer's proof sheet. Every lockup sits on the same mat at one shared scale,
+     with crop marks and its trim size, so relative sizes read true. */
+  :root {
+    --paper:   #f8f7f0;   /* site cream */
+    --mat:     #ecebe1;   /* proofing mat */
+    --ink:     #1b241d;
+    --ink-soft:#4d5a50;
+    --green:   #2a4a32;   /* logo green */
+    --spice:   #b55422;
+    --gold:    #a8822d;
+    --rule:    #d6d6c9;
+    --mark:    #8a948b;
+    --display: 'Young Serif', Georgia, serif;
+    --body:    'Karla', 'Segoe UI', Arial, sans-serif;
+    --mm: 3.1px;          /* proof scale: 1 mm of artwork */
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --paper:#0f1f14; --mat:#18301f; --ink:#ebe9d8; --ink-soft:#b7bfae; --green:#cfe0c8;
+    --spice:#f09a63; --gold:#e6be68; --rule:#2b4633; --mark:#6f8a74; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --paper:#0f1f14; --mat:#18301f; --ink:#ebe9d8; --ink-soft:#b7bfae; --green:#cfe0c8;
+    --spice:#f09a63; --gold:#e6be68; --rule:#2b4633; --mark:#6f8a74; color-scheme: dark }
+
+  * { box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font: 400 1rem/1.6 var(--body); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-block: 48px 72px;
+          padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+          display: grid; gap: 64px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.1; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.6rem); color: var(--green); }
+  h2 { font-size: 1.75rem; color: var(--green); }
+  h3 { font-size: 1.3rem; }
+  p { margin: 0; max-width: 64ch; }
+  .eyebrow { font: 700 .75rem/1 var(--body); letter-spacing: .18em; text-transform: uppercase; color: var(--spice); }
+  code, .file { font: 600 .8rem/1.4 ui-monospace, 'Cascadia Mono', Consolas, monospace; color: var(--ink-soft); overflow-wrap: anywhere; }
+
+  header { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
+  header svg { width: 84px; height: 84px; color: var(--green); }
+  header .lede { display: grid; gap: 10px; }
+  header p { color: var(--ink-soft); font-size: 1.1rem; }
+
+  section { display: grid; gap: 24px; }
+  .head { display: grid; gap: 8px; }
+  .head p { color: var(--ink-soft); }
+
+  /* destinations */
+  .dests { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .dest { border-top: 2px solid var(--green); padding-top: 14px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+  .dest h3 { color: var(--green); }
+  .dest p { color: var(--ink-soft); font-size: .95rem; }
+
+  /* lockup proofs */
+  .lockup { display: grid; gap: 18px; padding-top: 28px; border-top: 1px solid var(--rule); }
+  .lockup__meta { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; }
+  .lockup__meta h3 { color: var(--ink); }
+  .size { font: 700 .8rem/1 var(--body); letter-spacing: .08em; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .lockup__meta p { color: var(--ink-soft); flex-basis: 100%; }
+  .mat { background: var(--mat); border-radius: 6px; padding: 28px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; overflow-x: auto; }
+  figure { margin: 0; display: grid; gap: 10px; justify-items: start; min-width: 0; }
+  .proof { position: relative; padding: 9px; }
+  .proof img { display: block; width: calc(var(--w) * var(--mm)); height: auto; max-width: none; }
+  /* crop marks at each trim corner */
+  .proof::before, .proof::after, .proof i::before, .proof i::after {
+    content: ""; position: absolute; width: 7px; height: 7px; border-color: var(--mark); border-style: solid; }
+  .proof::before { top: 0; left: 0; border-width: 0 1px 1px 0; }
+  .proof::after { top: 0; right: 0; border-width: 0 0 1px 1px; }
+  .proof i::before { bottom: 0; left: 0; border-width: 1px 1px 0 0; }
+  .proof i::after { bottom: 0; right: 0; border-width: 1px 0 0 1px; }
+  figcaption { display: grid; gap: 2px; font-size: .85rem; color: var(--ink-soft); }
+  figcaption strong { color: var(--ink); font-weight: 600; }
+
+  /* rules */
+  .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px 32px; }
+  .rule { display: grid; gap: 6px; align-content: start; }
+  .rule h3 { font-size: 1.1rem; color: var(--green); }
+  .rule p { color: var(--ink-soft); font-size: .95rem; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+  .swatch { display: flex; gap: 8px; align-items: center; font-size: .85rem; }
+  .swatch span { width: 22px; height: 22px; border-radius: 4px; border: 1px solid var(--rule); }
+
+  .proofnote { background: var(--mat); border-radius: 6px; padding: 20px 24px; display: grid; gap: 6px; }
+  .proofnote p { color: var(--ink-soft); }
+  @media (max-width: 520px) { header { grid-template-columns: 1fr; } .mat { padding: 18px; gap: 22px; } :root { --mm: 2.6px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="2"/>
+      <circle cx="50" cy="50" r="42.5" stroke="currentColor" stroke-width="2"/>
+      <path d="M9.5 60.5 L23 45 L32.5 33 L38 39.5 L52.5 19.5 L63 38 L69 32 L90.5 55" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M45 33 l3.5 3.5 l3.5 -3.5 l3.5 3.5 l3.5 -3.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M29 38.5 l2.6 2.6 l2.6 -2.6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M8.5 62.5 C 26 58, 46 63, 62 74 M91.5 62.5 C 74 58, 54 63, 38 74" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+      <g transform="translate(48 66) rotate(-42)"><ellipse cx="0" cy="-17" rx="7.8" ry="10.6" stroke="currentColor" stroke-width="2.6"/><path d="M0 -6.4 V 26.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></g>
+      <g transform="translate(52.5 66) rotate(42)"><path d="M0 -5 L-7.4 -14.5 M0 -5 L7.4 -14.5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="M-7.4 -14.5 L-9.4 -25 M-2.5 -16 L-3.1 -27.5 M2.5 -16 L3.1 -27.5 M7.4 -14.5 L9.4 -25" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><path d="M0 -5 V 26.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></g>
+    </svg>
+    <div class="lede">
+      <span class="eyebrow">Valley Feast · Kitchen &amp; Catering</span>
+      <h1>QR Lockup Kit</h1>
+      <p>Print-ready QR codes for bottle labels, jar lids, menus and the counter. Each one opens a recipe in the Valley Cookbook.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="head">
+      <span class="eyebrow">Where each code goes</span>
+      <h2>Three codes, three destinations</h2>
+    </div>
+    <div class="dests" id="dests"></div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="eyebrow">The lockups</span>
+      <h2>Pick the shape that fits the job</h2>
+      <p>Shown at true relative size, so a label really is that much smaller than the counter card. Every file comes as SVG for the printer, a 600 dpi PNG, and a PDF cut to the exact trim size.</p>
+    </div>
+    <div id="lockups"></div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="eyebrow">Before you print</span>
+      <h2>Keep it scanning</h2>
+    </div>
+    <div class="rules">
+      <div class="rule"><h3>Print it big enough</h3><p>Keep the code itself at least 25 mm wide. The label prints it at 30 mm and the counter card at 50 mm. Never shrink a lockup below its listed size.</p></div>
+      <div class="rule"><h3>Leave the cream border alone</h3><p>Scanners need the empty cream space around the code. Don't trim into it, print over it, or butt it against a dark edge.</p></div>
+      <div class="rule"><h3>Keep it flat</h3><p>On a bottle, place the label on the flat face, away from the seam and the curve of the shoulder. Matte stock scans better than glossy under shop lights.</p></div>
+      <div class="rule"><h3>One-colour jobs</h3><p>For stamps or a single-ink sticker run, use the <code>code-mono</code> files: black on white, same design.</p></div>
+      <div class="rule"><h3>Brand colours for the printer</h3>
+        <div class="swatches">
+          <span class="swatch"><span style="background:#2a4a32"></span>Green #2A4A32</span>
+          <span class="swatch"><span style="background:#f8f7f0"></span>Cream #F8F7F0</span>
+          <span class="swatch"><span style="background:#b55422"></span>Spice #B55422</span>
+          <span class="swatch"><span style="background:#e6be68"></span>Gold #E6BE68</span>
+        </div>
+      </div>
+      <div class="rule"><h3>Test a proof first</h3><p>Print one sheet, then scan it with an iPhone camera and an Android camera before ordering a full run.</p></div>
+    </div>
+    <div class="proofnote">
+      <span class="eyebrow">Scan-tested</span>
+      <p>All 18 files were scanned by software at full size, at the size of a 25 mm print, blurred and tilted, and each one opened the right page. Text is converted to outlines, so the files print the same on any machine without the fonts installed.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+  const SITE = "valleyfeastkitchen.com/recipes.html";
+  const DESTS = [
+    { file: "cookbook",     title: "The Valley Cookbook", url: SITE,                                use: "Mixed-product labels, the catering menu, flyers and the counter." },
+    { file: "sorrel",       title: "Local Sorrel",        url: SITE + "?recipe=local-sorrel",       use: "Sorrel bottles and bags. Opens straight to the sorrel recipe." },
+    { file: "pepper-sauce", title: "Trini Pepper Sauce",  url: SITE + "?recipe=trini-pepper-sauce", use: "Pepper and pepper-sauce bottles. Opens straight to the pepper sauce recipe." },
+  ];
+  const LOCKUPS = [
+    { kind: "label",        name: "Bottle label",      w: 40,   h: 56,   use: "The main packaging piece, for the flat face of a bottle or jar." },
+    { kind: "sticker",      name: "Round sticker",     w: 58,   h: 58,   use: "Jar lids, bag seals and takeaway boxes. The ring reads the product name." },
+    { kind: "badge",        name: "Menu badge",        w: 96,   h: 40,   use: "Bottom of a printed menu, a flyer, a catering invoice or a market price card." },
+    { kind: "counter-card", name: "Counter card",      w: 105,  h: 148,  use: "A6 card for the counter, a stall or a catering table. Fits an A6 card stand." },
+    { kind: "code",         name: "Code only",         w: 47.8, h: 47.8, use: "The bare code, with its clear border, for layouts of your own. Scale it freely, keeping the code at least 25 mm wide." },
+    { kind: "code-mono",    name: "Code only, one colour", w: 47.8, h: 47.8, use: "Black on white, for stamps and single-ink printing." },
+  ];
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+  document.getElementById("dests").innerHTML = DESTS.map((d) => `
+    <div class="dest">
+      <h3>${esc(d.title)}</h3>
+      <code>${esc(d.url)}</code>
+      <p>${esc(d.use)}</p>
+    </div>`).join("");
+
+  document.getElementById("lockups").innerHTML = LOCKUPS.map((l) => `
+    <article class="lockup">
+      <div class="lockup__meta">
+        <h3>${esc(l.name)}</h3>
+        <span class="size">${l.w} × ${l.h} mm</span>
+        <p>${esc(l.use)}</p>
+      </div>
+      <div class="mat">
+        ${DESTS.map((d) => `
+          <figure>
+            <div class="proof" style="--w:${l.w}"><img src="svg/vf-${l.kind}-${d.file}.svg" alt="${esc(l.name)} for ${esc(d.title)}" loading="lazy"><i></i></div>
+            <figcaption><strong>${esc(d.title)}</strong><span class="file">vf-${l.kind}-${d.file}</span></figcaption>
+          </figure>`).join("")}
+      </div>
+    </article>`).join("");
+</script>
+</html>
