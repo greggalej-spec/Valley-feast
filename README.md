@@ -11,7 +11,24 @@ Website + staff studio for Valley Feast — authentic Trinidadian kitchen & cate
 | `index.html` | Landing — hero, signature dishes, story, catering teaser, hours & contact |
 | `menu.html` | Full menu, rendered live from the data layer, with category nav + dietary filters |
 | `catering.html` | Catering services + quote request (sends via WhatsApp or email) |
+| `recipes.html` | **The Valley Cookbook** — searchable recipes, ingredient scaling, printable recipe views and catering links |
 | `admin/index.html` | **Staff studio** — menu manager, flyer studio, printed menu, invoices, settings |
+
+## Recipes and packaging QR codes
+
+Recipe content lives in `data/recipes-data.js`. Add a new object there to publish another recipe; the collection, filters, detail view, ingredient scaling and search-engine recipe data are rendered automatically.
+
+Three print-ready 900 × 900 PNG QR codes are in `assets/img/`:
+
+| File | Destination | Best use |
+|---|---|---|
+| `recipes-qr.png` | `https://www.valleyfeastkitchen.com/recipes.html` | General Valley Feast / mixed-product label |
+| `recipes-qr-sorrel.png` | `https://www.valleyfeastkitchen.com/recipes.html?recipe=local-sorrel` | Sorrel packaging |
+| `recipes-qr-pepper-sauce.png` | `https://www.valleyfeastkitchen.com/recipes.html?recipe=trini-pepper-sauce` | Pepper or pepper-sauce packaging |
+
+Keep a clear, empty border around the code. Print it at least 25 mm (1 inch) wide, preferably 30–35 mm, and scan a physical proof on both iPhone and Android before ordering labels. The dark-green-on-cream artwork uses high error correction, but avoid glossy glare, folds, curved seams or placing text over the code.
+
+The Sorrel and pepper-sauce images were generated specifically for this project. Existing imagery in `assets/img/` is also described in the repository as AI-generated.
 
 ## How the data works
 
